@@ -137,9 +137,9 @@ body {
   font-size: 10px;
 }
 html {
-  background: white;
   width: 100%;
   font-family: 'Roboto', sans-serif;
+  background-color: rgba(167, 214, 223, 0.2);
 }
 body {
   width: 100%;
@@ -276,7 +276,6 @@ header .headerImageContainer .checkMeOutButton:hover {
 }
 @media screen and (max-width: 500px) {
   .aboutSection .imageAndQuoteContainer {
-    width: 50%;
     text-align: center;
   }
 }
@@ -359,6 +358,7 @@ header .headerImageContainer .checkMeOutButton:hover {
 .contactSection .contactSectionContainer .inputSections .submitButton:hover {
   background: rgba(11, 58, 146, 0.6);
   color: white;
+  cursor: pointer;
 }
 footer {
   display: flex;
