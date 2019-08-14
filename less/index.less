@@ -54,6 +54,8 @@ table {
 @blueButtonColor: rgba(11, 58, 146, .3);
 @strongBlueAccent: rgba(55, 104, 194, .8);	
 @lightestBlueAccent: rgba(56, 113, 219, .3);
+@titleFont: 'Montserrat', sans-serif;
+@generalFont: 'Roboto', sans-serif;
 
 .centerThatStuff(){
 	display: flex;
@@ -70,25 +72,37 @@ table {
 	font-size: 1.5rem;
 }
 
+.buttonHoverStyles(){
+	background: rgba(11, 58, 146, .6);
+	color: white;
+}
+
 * {
 	box-sizing: border-box;
+	transition: all .3s;
 }
 
 html, body {
 	height: 100%;
-	background: pink;
 	font-size: 10px;
 }
 
 html {
 	background: white;
 	width: 100%;
+	font-family: @generalFont;
+
 }
 
+// ============================ General Styling ====================================
 body {
 	width: 100%;
 	max-width: 900px;
 	margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @titleFont;
 }
 
 h2 {
@@ -102,6 +116,7 @@ p {
 	line-height: 1.6;
 }
 
+// ============================ Header Section ====================================
 header {
 	width: 100%;
 
@@ -114,14 +129,19 @@ header {
 
 		a {
 			text-decoration: none;
-			color: black;
+			color: rgba(255, 255, 255, .6);
 			font-size: 1.6rem;
 		}
-	} // -- nav close tag
+
+		a:hover {
+			color: white;
+		}
+	} // -- nav 
 
 	.headerImageContainer {
 		.centerThatStuff();
 		height: 100vh;
+		min-height: 700px;
 		width: 100%;
 		background-image: url('../images/headerBackground.jpg');
 		background-position: center;
@@ -149,7 +169,7 @@ header {
 				font-size: 1.8rem;
 				color: rgba(255, 255, 255, .5);
 			}
-		} // -- .headerTextContainer close tag
+		} // -- .headerTextContainer 
 
 		.checkMeOutButton {
 			.buttonStyles();
@@ -157,20 +177,25 @@ header {
 			margin-bottom: 175px;
 		}
 
-	} // -- .headerImageContainer close tag
-} // -- header close tag
+		.checkMeOutButton:hover {
+			.buttonHoverStyles();
+		}
 
+	} // -- .headerImageContainer 
+} // -- header 
+
+
+// ============================ About Section ====================================
 .aboutSection {
 	width: 100%;
-	height: 100vh;
 	background-color: @lightestBlueAccent;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	padding: 20px;
 
 	.aboutSectionContent {
 		width: 60%;
-		height: 550px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
@@ -191,7 +216,11 @@ header {
 			list-style-position: inside;
 			margin: 8px 0;
 		}
-	} // -- .aboutSectionContent close tag
+
+		@media screen and (max-width: 500px){
+			width: 80%;
+		}
+	} // -- .aboutSectionContent 
 
 	.imageAndQuoteContainer {
 		.centerThatStuff();
@@ -202,13 +231,23 @@ header {
 			width: 85%;
 			border-radius: 4px;
 		}
-	}
-} // -- .aboutSection close tag
 
+		@media screen and (max-width: 500px){
+			width: 50%;
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: 500px){
+		flex-direction: column-reverse;
+	}
+} // -- .aboutSection 
+
+
+// ============================ Project Section ====================================
 .projectSection {
 	.centerThatStuff();
-	height: 50vh;
-	min-height: 40%;
+	padding: 30px 0;
 	width: 100%;
 	background: @strongBlueAccent;
 
@@ -222,16 +261,17 @@ header {
 		span {
 			font-weight: bold;
 		}
-	} // -- .workHistory close tag
-} // -- .projectSection close tag
+	} // -- .workHistory 
+} // -- .projectSection 
 
+
+// ============================ Contact Section ====================================
 .contactSection {
 	.centerThatStuff();
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
-	height: 50vh;
-	min-height: 80%;
+	padding: 20px 0;
 	color: rgba(255, 255, 255, .8);
 	background: @lightestBlueAccent;
 
@@ -247,7 +287,6 @@ header {
 		h2, p {
 			line-height: .8;
 		}
-		
 		
 		.inputSections {
 			display: flex; 
@@ -266,20 +305,28 @@ header {
 			input {
 				margin: 0 0 15px;
 				padding: 5px;
+				border: 1px solid rgba(0, 0, 0, .3);
+				border-radius: 5px;
 			}
 
 			.submitButton {
 				.buttonStyles();
-				width: 300px;
+				width: 30%;
+				min-width: 100px;
 				border: none;
 				text-align: center;
 				margin: 0 auto;
 			}
-		} //-- .inputSections close tag
 
-	} //-- .contactSectionContainer close tag
-} //-- .contactSection close tag
+			.submitButton:hover {
+				.buttonHoverStyles();
+			}
+		} //-- .inputSections 
 
+	} //-- .contactSectionContainer 
+} //-- .contactSection 
+
+// ============================ Footer Section ====================================
 footer {
 	.centerThatStuff();
 	flex-direction: column;
@@ -296,4 +343,4 @@ footer {
 	a:hover {
 		color: white;
 	}
-} // -- footer close tag
+} // -- footer 
