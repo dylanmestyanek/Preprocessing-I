@@ -49,6 +49,27 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@fadedBlueAccent: rgba(55, 104, 194, .6);
+@blueButtonColor: rgba(11, 58, 146, .3);
+@strongBlueAccent: rgba(55, 104, 194, .8);	
+@lightestBlueAccent: rgba(56, 113, 219, .3);
+
+.centerThatStuff(){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttonStyles(){
+	border: none;
+	border-radius: 8px;
+	padding: 10px 20px;
+	background-color: @blueButtonColor;
+	color: rgba(255, 255, 255, .8);
+	font-size: 1.5rem;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -70,6 +91,17 @@ body {
 	margin: 0 auto;
 }
 
+h2 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+p {
+	font-size: 1.6rem;
+	line-height: 1.6;
+}
+
 header {
 	width: 100%;
 
@@ -78,39 +110,34 @@ header {
 		justify-content: space-evenly;
 		align-items: center;
 		height: 40px;
-		background-color: rgba(55, 104, 194, .8);		
+		background-color: @strongBlueAccent;	
 
 		a {
 			text-decoration: none;
 			color: black;
 			font-size: 1.6rem;
 		}
-
 	} // -- nav close tag
 
 	.headerImageContainer {
+		.centerThatStuff();
 		height: 100vh;
 		width: 100%;
 		background-image: url('../images/headerBackground.jpg');
 		background-position: center;
 		background-size: cover;
-		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 
 		.headerTextContainer {
+			.centerThatStuff();
 			width: 70%;
 			background: rgba(0, 0, 0, .2);
 			border-radius: 8px;
-			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
 			text-align: center;			
 			margin: 0 0 20px;
 			padding: 20px 5px;
-			background-color: rgba(11, 58, 146, .6);
+			background-color: @fadedBlueAccent;
 			color: rgba(255, 255, 255, .8);
 			
 			h1 {
@@ -125,14 +152,9 @@ header {
 		} // -- .headerTextContainer close tag
 
 		.checkMeOutButton {
-			border: none;
-			border-radius: 8px;
-			padding: 10px 20px;
-			margin-bottom: 175px;
-			background-color: rgba(11, 58, 146, .3);
-			color: rgba(255, 255, 255, .8);
+			.buttonStyles();
 			text-decoration: none;
-			font-size: 1.5rem;
+			margin-bottom: 175px;
 		}
 
 	} // -- .headerImageContainer close tag
@@ -141,21 +163,11 @@ header {
 .aboutSection {
 	width: 100%;
 	height: 100vh;
-	background-color: rgba(56, 113, 219, .3);
+	background-color: @lightestBlueAccent;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 
-	h2 {
-		font-size: 2.5rem;
-		margin-bottom: 10px;
-		font-weight: bold;
-	}
-
-	p {
-		font-size: 1.6rem;
-		line-height: 1.6;
-	}
 	.aboutSectionContent {
 		width: 60%;
 		height: 550px;
@@ -168,32 +180,120 @@ header {
 			width: 100%;
 			margin: 20px 0;
 			padding: 10px;
-			border-radius: 8px;
-			background: rgba(255, 255, 255, .7)
+			background: rgba(255, 255, 255, .7);
+			border-left: 5px solid @strongBlueAccent;
+			border-radius: 3px;
 		}
 
-		.aboutMeText {
-			width: 100%;
-			border: 1px solid black;
-	
-			
-		}
-	
-		.mySkills {
-			width: 100%;
-			border: 1px solid black;
-
-			ul li {
-				font-size: 1.6rem;
-				list-style-type: disc;
-				list-style-position: inside;
-				margin: 8px 0;
-			}
+		ul li {
+			font-size: 1.6rem;
+			list-style-type: disc;
+			list-style-position: inside;
+			margin: 8px 0;
 		}
 	} // -- .aboutSectionContent close tag
 
-	.aboutMeImg {
-		width: 30%;
-		border-radius: 4px;
+	.imageAndQuoteContainer {
+		.centerThatStuff();
+		width: 40%;
+		flex-direction: column;
+
+		.aboutMeImg {
+			width: 85%;
+			border-radius: 4px;
+		}
 	}
 } // -- .aboutSection close tag
+
+.projectSection {
+	.centerThatStuff();
+	height: 50vh;
+	min-height: 40%;
+	width: 100%;
+	background: @strongBlueAccent;
+
+	.workHistory {
+		width: 70%;
+		background: rgba(255, 255, 255, .8);
+		padding: 20px;
+		border-radius: 5px;
+		text-align: justify;
+	
+		span {
+			font-weight: bold;
+		}
+	} // -- .workHistory close tag
+} // -- .projectSection close tag
+
+.contactSection {
+	.centerThatStuff();
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 50vh;
+	min-height: 80%;
+	color: rgba(255, 255, 255, .8);
+	background: @lightestBlueAccent;
+
+
+	.contactSectionContainer {
+		display: flex;
+		flex-direction: column;
+		width: 70%;
+		padding: 40px;
+		border-radius: 8px;
+		background: rgba(55, 104, 194, .5);
+		
+		h2, p {
+			line-height: .8;
+		}
+		
+		
+		.inputSections {
+			display: flex; 
+			flex-direction: column;
+			color: black;
+			background: white;
+			padding: 20px; 
+			margin: 20px 0 0;
+			border-radius: 5px;
+			
+			label {
+				font-size: 1.8rem;
+				margin-bottom: 5px;
+			}
+	
+			input {
+				margin: 0 0 15px;
+				padding: 5px;
+			}
+
+			.submitButton {
+				.buttonStyles();
+				width: 300px;
+				border: none;
+				text-align: center;
+				margin: 0 auto;
+			}
+		} //-- .inputSections close tag
+
+	} //-- .contactSectionContainer close tag
+} //-- .contactSection close tag
+
+footer {
+	.centerThatStuff();
+	flex-direction: column;
+	height: 100px;
+	width: 100%;
+	background: @strongBlueAccent;
+	color: rgba(255, 255, 255, .6);
+	
+	a {
+		text-decoration: none;
+		color: rgba(255, 255, 255, .6)
+	}
+
+	a:hover {
+		color: white;
+	}
+} // -- footer close tag

@@ -52,32 +52,51 @@
         </div>
       </div> <!-- .aboutSectionContent Close Tag-->
 
-      <img src="images/aboutMe.jpg" alt="" class="aboutMeImg">
+      <div class="imageAndQuoteContainer">
+        <p> That's me reading about my life ⤦ </p>
+        <img class="aboutMeImg" src="images/aboutMe.jpg" alt="I am on fire">
+      </div>
     </section>
 
   <!-- Project Section -->
     <section class="projectSection">
-      <h2> What I've Done </h2>
-      <div class="workHistory"></div>
+      <div class="workHistory">
+        <h2> What I've Done </h2>
+        <p> <span> March, 1943 </span> ······· Helped a lady cross the road. </p> <br />
+        <p> <span> February, 1968 </span> ··· Ate 3 dozen donuts, in the span of 25 minutes. </p> <br />
+        <p> <span> December, 1972 </span> ··· I almost built a website... Almost.</p> <br />
+        <p> <span> July, 1983 </span> ·········· I locked my keys in my car, and 6 hours later found myself in Canada. </p> <br />
+        <p> <span> Present </span> ············· Oh wait, this was supposed to be professional.. wasn't it? </p>
+      </div>
     </section>
 
    <!-- Form Section -->
     <form class="contactSection">
-      <label for="firstName"></label>
-      <input type="name" id="firstName" value="" placeholder="First Name" />
+      <div class="contactSectionContainer">
+        <h2> Any Questions? </h2>
+        <p> Hit me up! </p>
+          <div class="inputSections">
+            <label for="firstName"> First Name: </label>
+            <input type="name" id="firstName" value="" placeholder="First Name" />
+        
+            <label for="lastName"> Last Name: </label>
+            <input type="name" id="lastName" value="" placeholder="Last Name"/>  
+    
+            <label for="email"> E-Mail: </label>
+            <input type="email" id="email" value="" placeholder="E-Mail"/>  
+            
+            <label for="questions"> Questions? </label>
+            <input type="text" id="questions" value="" placeholder="Example: Why do you suck so bad?" />
 
-      <label for="lastName"></label>
-      <input type="name" id="lastName" value="" placeholder="Last Name"/>
-
-      <label for="email"></label>
-      <input type="email" id="email" value="" placeholder="E-Mail"/>
-
-      <button type="submit" id="submit" value=""> Submit </button>
+            <button class="submitButton" type="submit" id="submit" value=""> Submit </button>
+          </div> <!-- .inputSections close tag -->
+      </div> <!-- .contactSectionContainer close tag -->
     </form> 
 
     <!-- Footer -->
     <footer>
-      <p> Copyright My Butt 2019 </p>
+      <p> Copyright Big Boy 2019 </p> 
+      <p> Image Credibility: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
     </footer>
 </body>
 </html>
